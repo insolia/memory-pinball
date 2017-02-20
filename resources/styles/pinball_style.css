@@ -1,0 +1,47 @@
+
+
+body{
+
+    background-color: gray;
+}
+
+.page{
+
+    margin-top: 60px;
+    height: 500px;
+    background-color: ghostwhite;
+
+}
+
+.intro-buttons-container{
+    margin-top: 100px ;
+}
+
+
+#intro-heading{
+    margin-top: 30px;
+    font-size: 80px;
+}
+
+table{
+    width: 75%;
+}
+td {
+    width: 5%;
+    position: relative;
+}
+td:after {
+    content: '';
+    display: block;
+    margin-top: 100%;
+}
+td .cell {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: ghostwhite;
+    width: 100%;
+    height : 100%;
+}
