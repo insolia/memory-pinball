@@ -28,6 +28,42 @@ var emptyFieldInfo = function (height, width) {
     console.log("Empty field info returned");
     console.log(fieldInfo)
     return fieldInfo;
+};
+
+var generateLevel = function(height,width){
+    var field_info = emptyFieldInfo(height,width);
+
+}
+
+var generateBallPosition = function(height,width){
+    var borderSide = Math.floor((Math.random() * 4) + 1);
+
+    /*
+    *     1
+    *  |-----|
+    * 4|     |2
+    *  |-----|
+    *     3
+    * */
+
+    switch (borderSide){
+        case 1:
+            return [0,Math.floor((Math.random() * (width+1)))];
+            break;
+        case 2:
+            return [Math.floor((Math.random() * (height+1))), width+1];
+            break;
+        case 3:
+            return [height+1,Math.floor((Math.random() * (width+1)))];
+            break;
+        case 4:
+            return [Math.floor((Math.random() * (height+1))),0];
+            break;
+    }
 
 };
+
+var generateWallPosition = function(height,width){
+
+}
 

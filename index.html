@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="resources/styles/pinball_style.css">
-    <link rel="stylesheet" href="resources/bootstrap.css">
-    <script src="resources/jquery-3.1.1.js"></script>
-    <script src="resources/scripts/Game.js"></script>
-    <script src="resources/scripts/Intro.js"></script>
-    <script src="resources/scripts/Layout.js"></script>
-    <script src="resources/scripts/Constants.js"></script>
-    <script src="resources/scripts/Utils.js"></script>
-    <title></title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="resources/styles/pinball_style.css">
+<link rel="stylesheet" href="resources/bootstrap.css">
+<script src="resources/jquery-3.1.1.js"></script>
+<script src="resources/scripts/Game.js"></script>
+<script src="resources/scripts/Intro.js"></script>
+<script src="resources/scripts/Layout.js"></script>
+<script src="resources/scripts/Constants.js"></script>
+<script src="resources/scripts/Utils.js"></script>
+<title></title>
 </head>
 <body>
 
 <div class="main-container">
     <div class="intro-container page ">
         <div class="container">
-        <div class="intro-message-container row">
-            <div id = "intro-heading" class="h1 col-sm-12 text-center"> Memory Pinball</div>
-        </div>
-        <div class="intro-buttons-container row">
-            <button id = "button-rules" class="col-sm-2 col-md-offset-2 btn"> Rules </button>
-            <button id = "button-play" class="col-sm-2 col-md-offset-1 btn"> Play </button>
-            <button id = "button-about" class="col-sm-2 col-md-offset-1 btn"> About </button>
-        </div>
+            <div class="intro-message-container row">
+                <div id="intro-heading" class="h1 col-sm-12 text-center"> Memory Pinball</div>
+            </div>
+            <div class="intro-buttons-container row">
+                <button id="button-rules" class="col-sm-2 col-md-offset-2 btn"> Rules</button>
+                <button id="button-play" class="col-sm-2 col-md-offset-1 btn"> Play</button>
+                <button id="button-about" class="col-sm-2 col-md-offset-1 btn"> About</button>
+            </div>
         </div>
     </div>
 
     <div class="game-container page">
         <div class="container">
-        <div class="game-box">
-            <table class = "game-board">
-
-            </table>
+            <div class="game-box">
+                <div class="row">
+                <div class="col-sm-2"> hints</div>
+                <div class="col-sm-8">
+                    <table class="game-board">
+                    </table>
+                </div>
+                <div class="col-sm-2"> controls</div>
+            </div>
         </div>
     </div>
-    </div>
-    <div class="game-over-container page">Here is gameover</div>
+</div>
+<div class="game-over-container page">Here is gameover</div>
 </div>
 
 
