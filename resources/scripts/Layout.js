@@ -2,11 +2,8 @@
  * Created by Insolia on 19.02.17.
  */
 
-var field_height = 7;
-var field_width = 7;
-
 $(document).ready(function () {
-    $("title").text(PAGE_TITLE);
+    $("title").text(Settings.page_title);
 
     // hide everything before start
     $(".page").hide();
@@ -25,8 +22,8 @@ var buildGame = function () {
     $(".game-container").show().animate({height: '75%'}, "slow");
     var gameBox = $(".game-box");
     gameBox.hide();
-    console.log("Start building empty field")
-    buildGameField(emptyFieldInfo(field_height, field_width));
+    console.log("Start building empty field");
+    buildGameField(emptyFieldInfo(Settings.field_height, Settings.field_width));
     gameBox.fadeIn("slow");
 
 };
@@ -43,18 +40,20 @@ var buildGameField = function (fieldInfo) {
 
             var code = fieldInfo[h][w];
 
-            if(!!(BORDER_CODES.indexOf(code)+1)){
+            if (!!(BORDER_CODES.indexOf(code) + 1)) {
                 var td = HTML_BORDER;
-                td = td.replace("{{border_id}}", 'border_'+h + '_' + w);
+                td = td.replace("{{border_id}}", 'border_' + h + '_' + w);
+                td = td.replace("{{ball_id}}", getElementId(CODE_BALL,h,w));
 
-            }else{
+
+            } else {
                 var td = HTML_CELL;
-                td = td.replace("{{cell_id}}", 'cell_'+h + '_' + w);
-                td = td.replace("{{right_wall_id}}", 'right_wall_'+h + '_' + w);
-                td = td.replace("{{left_wall_id}}", 'left_wall_'+h + '_' + w);
+                td = td.replace("{{cell_id}}", getElementId(CODE_EMPTY_CELL,h,w));
+                td = td.replace("{{right_wall_id}}", getElementId(CODE_RIGHT_WALL,h,w));
+                td = td.replace("{{left_wall_id}}", getElementId(CODE_LEFT_WALL,h,w));
 
             }
-            td =  td.replace("{{pic_address}}", CODE_PIC_MAP[code])
+            td = td.replace("{{pic_address}}", CODE_PIC_MAP[code]);
 
             tr += td;
         }
@@ -64,8 +63,8 @@ var buildGameField = function (fieldInfo) {
         gameBoard.append(tr);
 
     }
-
     $(".wall").hide();
+    $(".ball").hide();
 };
 
 

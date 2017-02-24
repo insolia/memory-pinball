@@ -2,8 +2,6 @@
  * Created by Insolia on 19.02.17.
  */
 
-PAGE_TITLE = "Memory Pinball";
-
 CODE_EMPTY_CELL = "E";
 CODE_LEFT_WALL = "L";
 CODE_RIGHT_WALL = "R";
@@ -14,6 +12,8 @@ CODE_TOP_BORDER = "BT";
 CODE_BOTTOM_BORDER = "BB";
 CODE_CORNER_BORDER = "BC";
 
+CODE_BALL = "BALL"
+
 BORDER_CODES = [];
 
 BORDER_CODES.push(CODE_RIGHT_BORDER);
@@ -21,9 +21,6 @@ BORDER_CODES.push(CODE_LEFT_BORDER);
 BORDER_CODES.push(CODE_TOP_BORDER);
 BORDER_CODES.push(CODE_BOTTOM_BORDER);
 BORDER_CODES.push(CODE_CORNER_BORDER);
-
-
-
 
 
 
@@ -37,6 +34,7 @@ PIC_ADRESS_LEFT_BORDER = 'resources/files/border_BL.png';
 PIC_ADRESS_TOP_BORDER = 'resources/files/border_BT.png';
 PIC_ADRESS_BOTTOM_BORDER = 'resources/files/border_BB.png';
 PIC_ADRESS_CORNER_BORDER = 'resources/files/border_BC.png';
+PIC_ADRESS_BALL = 'resources/files/ball.png';
 
 
 HTML_CELL = '<td>' +
@@ -47,8 +45,11 @@ HTML_CELL = '<td>' +
 
 HTML_BORDER = '<td> ' +
     '<img src="{{pic_address}}" class="border" id="{{border_id}}"> ' +
+    '<img src='+PIC_ADRESS_BALL +' class="border ball" id="{{ball_id}}"> ' +
     '</td>';
 
+CLASS_CURRENT_LEVEL_WALL = "current-level-wall";
+CLASS_CURRENT_LEVEL_BALL = "current-level-ball";
 
 
 
