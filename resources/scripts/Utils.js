@@ -25,7 +25,6 @@ var emptyFieldInfo = function (height, width) {
         }
         fieldInfo.push(fieldRow);
     }
-    console.log("Empty field info returned");
     return fieldInfo;
 };
 
@@ -33,7 +32,7 @@ var getAllPossibleWalls = function (height, width) {
     var apw = [];
     for (var h = 1; h <= height; h++) {
         for (var w = 1; w <= width; w++) {
-            apw.push([h,w]);
+            apw.push([h, w]);
         }
     }
     return apw;
@@ -53,7 +52,7 @@ var generateLevel = function (height, width, numOfWalls) {
         chosenWallNumber = Math.floor((Math.random() * allPossibleWalls.length));
 
         var wallPos = allPossibleWalls[chosenWallNumber];
-        allPossibleWalls.splice(chosenWallNumber,1);
+        allPossibleWalls.splice(chosenWallNumber, 1);
 
         if (Math.random() > 0.5) {
             var code = CODE_RIGHT_WALL;
@@ -69,6 +68,7 @@ var generateLevel = function (height, width, numOfWalls) {
     fieldInfo[ballPos[0]][ballPos[1]] = CODE_BALL;
 
     var answer = calculateAnswer(Ball, fieldInfo);
+    fieldInfo[answer[0]][answer[1]] = CODE_CORRECT_ANSWER;
 
     var level = {};
     level[CODE_BALL] = Ball;
@@ -124,6 +124,11 @@ var getElementId = function (elementCode, h, w) {
             return 'cell_' + h + '_' + w;
         case CODE_BALL:
             return 'ball_' + h + '_' + w;
+        case CODE_CORRECT_ANSWER:
+            return 'correct_answer_' + h + '_' + w;
+        case CODE_USER_ANSWER:
+            return 'user_answer_' + h + '_' + w;
+
     }
 };
 
@@ -135,7 +140,6 @@ var getCoordinatesById = function (elementId) {
 var calculateAnswer = function (ball_list, fieldInfo) {
 
     var calculateAnswerByStep = function (from, now) {
-        console.log(now[0], now[1]);
         // this function recursivly calculates final ball state.
         // each iteration of it makes one step from cell to cell.
         var current_code = fieldInfo[now[0]][now[1]];

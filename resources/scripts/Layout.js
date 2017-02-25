@@ -8,7 +8,6 @@ $(document).ready(function () {
     // hide everything before start
     $(".page").hide();
 
-
     intro();
 });
 
@@ -44,6 +43,9 @@ var buildGameField = function (fieldInfo) {
                 var td = HTML_BORDER;
                 td = td.replace("{{border_id}}", 'border_' + h + '_' + w);
                 td = td.replace("{{ball_id}}", getElementId(CODE_BALL,h,w));
+                td = td.replace("{{corr_ans_id}}", getElementId(CODE_CORRECT_ANSWER,h,w));
+                td = td.replace("{{user_ans_id}}", getElementId(CODE_USER_ANSWER,h,w));
+
 
 
             } else {
@@ -63,8 +65,7 @@ var buildGameField = function (fieldInfo) {
         gameBoard.append(tr);
 
     }
-    $(".wall").hide();
-    $(".ball").hide();
+    $(".tech").hide();
 };
 
 

@@ -18,14 +18,13 @@ var game = function () {
         $("." + CLASS_CURRENT_LEVEL_WALL).fadeOut();
         $("." + CLASS_CURRENT_LEVEL_BALL).show("slow");
         $(".border").one("click",function(event){
+            //actions after user clicked his answer
             var answer_boarder_id = event.target.id;
-            console.log('clicked ' + answer_boarder_id);
             processAnswer(answer_boarder_id,level);
             $(".border").off("click");
-
         });
-
     }, CUMULATIVE_MEMORIZING_DELAY);
+
 
 
 /*
@@ -39,12 +38,10 @@ var setUpLevel = function (level) {
     var R = level[CODE_RIGHT_WALL];
     var L = level[CODE_LEFT_WALL];
     var Ball = level[CODE_BALL];
-
+    var answer = level["answer"];
 
     for (var i = 0; i < R.length; i++) {
-
         $("#" + getElementId(CODE_RIGHT_WALL, R[i][0], R[i][1])).addClass(CLASS_CURRENT_LEVEL_WALL);
-        console.log("#" + getElementId(CODE_RIGHT_WALL, R[i][0], R[i][1]))
     }
 
     for (var i = 0; i < L.length; i++) {
@@ -53,7 +50,7 @@ var setUpLevel = function (level) {
     for (var i = 0; i < Ball.length; i++) {
         $("#" + getElementId(CODE_BALL, Ball[i][0], Ball[i][1])).addClass(CLASS_CURRENT_LEVEL_BALL);
     }
-
+    $("#" + getElementId(CODE_CORRECT_ANSWER, answer[0], answer[1])).addClass(CLASS_CURRENT_LEVEL_CORRECT_ANSWER);
 };
 
 var cleanUpLevel = function(){
@@ -64,14 +61,17 @@ var cleanUpLevel = function(){
 var processAnswer = function(answer_boarder_id,level){
     var hintLog = $(".left-box");
 
-    console.log(answer_boarder_id);
-    console.log(getElementId(CODE_BOTTOM_BORDER,level.answer[0],level.answer[1]));
     $("." + CLASS_CURRENT_LEVEL_WALL).fadeIn();
+    $("." + CLASS_CURRENT_LEVEL_CORRECT_ANSWER).fadeIn();
 
     if(getElementId(CODE_BOTTOM_BORDER,level.answer[0],level.answer[1]) == answer_boarder_id){
         hintLog.prepend("yep")
     } else{
-        hintLog.prepend("nope")
+        hintLog.prepend("nope");
+        var user_ans_coord = getCoordinatesById(answer_boarder_id);
+
+        $("#" + getElementId(CODE_USER_ANSWER,user_ans_coord[0],user_ans_coord[1])).fadeIn();
+
     }
 };
 
