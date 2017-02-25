@@ -20,17 +20,12 @@ var game = function () {
         $(".border").one("click",function(event){
             var answer_boarder_id = event.target.id;
             console.log('clicked ' + answer_boarder_id);
-            //processAnswer(answer_boarder_id,level);
+            processAnswer(answer_boarder_id,level);
             $(".border").off("click");
 
         });
 
     }, CUMULATIVE_MEMORIZING_DELAY);
-
-    $(".wall").click(function(event){
-        var answer_boarder_id = event.target.id;
-        //processAnswer(answer_boarder_id,level);
-    });
 
 
 /*
@@ -61,5 +56,22 @@ var setUpLevel = function (level) {
 
 };
 
+var cleanUpLevel = function(){
+    $("." + CLASS_CURRENT_LEVEL_BALL).removeClass(CLASS_CURRENT_LEVEL_BALL);
+    $("." + CLASS_CURRENT_LEVEL_WALL).removeClass(CLASS_CURRENT_LEVEL_WALL);
+};
 
+var processAnswer = function(answer_boarder_id,level){
+    var hintLog = $(".left-box");
+
+    console.log(answer_boarder_id);
+    console.log(getElementId(CODE_BOTTOM_BORDER,level.answer[0],level.answer[1]));
+    $("." + CLASS_CURRENT_LEVEL_WALL).fadeIn();
+
+    if(getElementId(CODE_BOTTOM_BORDER,level.answer[0],level.answer[1]) == answer_boarder_id){
+        hintLog.prepend("yep")
+    } else{
+        hintLog.prepend("nope")
+    }
+};
 

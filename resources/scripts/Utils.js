@@ -36,19 +36,20 @@ var generateLevel = function (height, width, numOfWalls) {
     var Ball = [];
 
     for (var i = 0; i < numOfWalls; i++) {
+        // TODO: walls are one on another. that should be fixed
         var wallPos = generateWallPosition(height, width);
         if (Math.random() > 0.5) {
-            var code = CODE_RIGHT_WALL
+            var code = CODE_RIGHT_WALL;
             R.push(wallPos);
         } else {
-            var code = CODE_RIGHT_WALL
+            var code = CODE_LEFT_WALL;
             L.push(wallPos);
         }
         fieldInfo[wallPos[0]][wallPos[1]] = code;
     }
-    var ballPos = generateBallPosition(height, width)
+    var ballPos = generateBallPosition(height, width);
     Ball.push(ballPos);
-    fieldInfo[ballPos[0]][ballPos[1]] = CODE_BALL
+    fieldInfo[ballPos[0]][ballPos[1]] = CODE_BALL;
 
     var answer = calculateAnswer(Ball,fieldInfo);
 
@@ -113,9 +114,15 @@ var getElementId = function (elementCode, h, w) {
     }
 };
 
+var getCoordinatesById = function(elementId){
+    var elIdSplit = elementId.split("_");
+    return [elIdSplit[elIdSplit.length-2],elIdSplit[elIdSplit.length-1]]
+};
+
 var calculateAnswer = function(ball_list,fieldInfo){
 
     var calculateAnswerByStep = function(from, now){
+        console.log(now[0],now[1]);
         // this function recursivly calculates final ball state.
         // each iteration of it makes one step from cell to cell.
         var current_code = fieldInfo[now[0]][now[1]];
@@ -143,7 +150,6 @@ var calculateAnswer = function(ball_list,fieldInfo){
     // we are looking forward to support multiball levels, but for now, lets just hack it this way
     // TODO: make fully functionall multiball support
     var ball = ball_list[0];
-
     var efi = emptyFieldInfo(Settings.field_height,Settings.field_width);
     switch (efi[ball[0]][ball[1]]){
         case CODE_BOTTOM_BORDER:
@@ -159,7 +165,6 @@ var calculateAnswer = function(ball_list,fieldInfo){
             to = [ball[0],ball[1]-1];
             break;
     }
-
     return calculateAnswerByStep(ball,to);
 };
 

@@ -1,10 +1,10 @@
 
 var Settings = {
     page_title:"Memory Pinball",
-    field_height:7,
-    field_width:7,
-    num_of_walls:10,
-    memory_delay: 1000,
+    field_height:5,
+    field_width:5,
+    num_of_walls:6,
+    memory_delay: 5000,
     before_play_delay: 1000
 };
 
