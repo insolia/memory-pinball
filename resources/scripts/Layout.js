@@ -18,7 +18,7 @@ var hideIntro = function () {
     $(".intro-container").hide();
 };
 var buildGame = function () {
-    $(".game-container").show().animate({height: '75%'}, "slow");
+    $(".game-container").show()//.animate({height: "75%"}, "slow");
     var gameBox = $(".game-box");
     gameBox.hide();
     console.log("Start building empty field");

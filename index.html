@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
-<link rel="stylesheet" href="resources/styles/pinball_style.css">
 <link rel="stylesheet" href="resources/bootstrap.css">
+<link rel="stylesheet" href="resources/styles/pinball_style.css">
 <script src="resources/jquery-3.1.1.js"></script>
 <script src="resources/scripts/Settings.js"></script>
 <script src="resources/scripts/Constants.js"></script>
@@ -21,25 +21,33 @@
                 <div id="intro-heading" class="h1 col-sm-12 text-center"> Memory Pinball</div>
             </div>
             <div class="intro-buttons-container row">
-                <button id="button-rules" class="col-sm-2 col-md-offset-2 btn"> Rules</button>
-                <button id="button-play" class="col-sm-2 col-md-offset-1 btn"> Play</button>
-                <button id="button-about" class="col-sm-2 col-md-offset-1 btn"> About</button>
+                <button id="button-rules" class="col-xs-3 col-sm-2 col-sm-offset-2 col-xs-offset-1 btn">Rules</button>
+                <button id="button-play" class="col-xs-3 col-sm-2 col-sm-offset-1 btn">Play</button>
+                <button id="button-about" class="col-xs-3 col-sm-2 col-sm-offset-1 btn">About</button>
             </div>
         </div>
     </div>
 
-    <div class="game-container page">
-        <div class="container">
+    <div class="game-container page container">
             <div class="game-box">
-                <div class="row">
-                <div class="col-sm-2 left-box">hints</div>
-                <div class="col-sm-8">
-                    <table class="game-board">
-                    </table>
+                <div class="row game-row">
+                    <div class="col-md-6 col-sm-8 col-sm-push-2 col-md-push-3">
+                        <table class="game-board game-element">
+                        </table>
+                    </div>
+                <div class="col-md-3 col-sm-2 col-sm-pull-8 col-md-pull-6">
+                    <div class="left-box side-box game-element">
+                        left
+                    </div>
                 </div>
-                <div class="col-sm-2 right-box"> controls</div>
+
+                <div class="col-md-3 col-sm-2">
+                    <div class=" right-box side-box game-element">
+                        right
+                    </div>
+
+                </div>
             </div>
-        </div>
     </div>
 </div>
 <div class="game-over-container page">Here is gameover</div>
