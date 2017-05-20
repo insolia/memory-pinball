@@ -97,15 +97,10 @@ var updateLog = function () {
         return a
     }).length;
     hintLog.append("You got " + corrAnsCount + " out of " + userProgress.length + BR);
-    hintLog.append("Here is your progress story");
+    hintLog.append("Here is your progress story:");
     userProgress.forEach(function (a, ind) {
         hintLog.append(BR);
-        console.log(a, ind);
-        console.log(+(ind+1));
-        console.log(+(ind+1) + ". " +  a ? HTML_CORRECT_ANS_LOG : HTML_WRONG_ANS_LOG)
-
-
-        console.log(+(ind+1) + ". " +  a ? HTML_CORRECT_ANS_LOG : HTML_WRONG_ANS_LOG);
+        hintLog.append(+(ind+1) + ". ");
         if (a){
             hintLog.append(HTML_CORRECT_ANS_LOG)
         }else{

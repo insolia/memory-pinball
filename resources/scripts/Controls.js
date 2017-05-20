@@ -5,22 +5,36 @@
 var controls = function(){
 
     buildIntro();
-    var timers;
+    var timers = [];
 
     $("#button-play").click(function(){
         hideIntro();
         timers = game();
-    })
+    });
+
+    $("#button-rules").click(function(){
+        hideIntro();
+        showRules();
+    });
+
+    $("#button-about").click(function(){
+        hideIntro();
+        showAbout();
+    });
 
     $("#play-again-button").click(function(){
         cleanUpLevel(timers);
         timers = game();
-    })
+    });
 
-    $("#menu-button").click(function(){
+    $(".menu-button").click(function(){
         cleanUpLevel(timers);
+        cleanUpInfo();
         buildIntro();
-    })
+    });
 
 
-}
+
+
+
+};

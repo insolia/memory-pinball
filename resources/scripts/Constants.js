@@ -59,6 +59,9 @@ HTML_CORRECT_ANS_LOG = "Correct";
 HTML_WRONG_ANS_LOG = "Wrong";
 BR = "<br>";
 
+HTML_ABOUT = "This is a pure jQuery game";
+HTML_RULES = "Memorize the maze and predict where the ball would go";
+
 
 CLASS_CURRENT_LEVEL_WALL = "current-level-wall";
 CLASS_CURRENT_LEVEL_BALL = "current-level-ball";
