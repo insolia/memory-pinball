@@ -191,9 +191,6 @@ var userProgress = [];
 
 var gameFieldIsPresent = function(){
     return fieldIsBuilt;
-}
-
-
-
+};
 
 
