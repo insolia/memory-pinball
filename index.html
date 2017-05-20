@@ -8,7 +8,7 @@
 <script src="resources/scripts/Constants.js"></script>
 <script src="resources/scripts/Utils.js"></script>
 <script src="resources/scripts/Layout.js"></script>
-<script src="resources/scripts/Intro.js"></script>
+<script src="resources/scripts/Controls.js"></script>
 <script src="resources/scripts/Game.js"></script>
 <title></title>
 </head>
@@ -21,9 +21,9 @@
                 <div id="intro-heading" class="h1 col-sm-12 text-center"> Memory Pinball</div>
             </div>
             <div class="intro-buttons-container row">
-                <button id="button-rules" class="col-xs-3 col-sm-2 col-sm-offset-2 col-xs-offset-1 btn">Rules</button>
-                <button id="button-play" class="col-xs-3 col-sm-2 col-sm-offset-1 btn">Play</button>
-                <button id="button-about" class="col-xs-3 col-sm-2 col-sm-offset-1 btn">About</button>
+                <label type="button" id="button-rules" class="col-xs-3 col-sm-2 col-sm-offset-2 col-xs-offset-1 my-button btn">Rules</label>
+                <label type="button" id="button-play" class="col-xs-3 col-sm-2 col-sm-offset-1 my-button btn">Play</label>
+                <label type="button" id="button-about" class="col-xs-3 col-sm-2 col-sm-offset-1 my-button btn">About</label>
             </div>
         </div>
     </div>
@@ -31,19 +31,26 @@
     <div class="game-container page container">
             <div class="game-box">
                 <div class="row game-row">
-                    <div class="col-md-6 col-sm-8 col-sm-push-2 col-md-push-3">
+                    <div class="col-lg-5 col-md-6 col-sm-8 col-sm-push-2 col-lg-push-3 col-md-push-3">
                         <table class="game-board game-element">
                         </table>
                     </div>
-                <div class="col-md-3 col-sm-2 col-sm-pull-8 col-md-pull-6">
+                <div class="col-md-3 col-lg-3 col-sm-2 col-sm-pull-8 col-md-pull-6">
                     <div class="left-box side-box game-element">
-                        left
+                        Let's Start!
                     </div>
                 </div>
 
-                <div class="col-md-3 col-sm-2">
-                    <div class=" right-box side-box game-element">
-                        right
+                <div class="col-md-3 col-lg-4 col-sm-2 ">
+                    <div class=" right-box side-box game-element container">
+                        <div class="row">
+                        <label type="button" id="menu-button" class="btn my-button side-box-button col-sm-12">Menu</label>
+                        </div>
+                        <br>
+                        <div class="row">
+                        <label type="button" id="play-again-button" style="display: none" class="btn my-button side-box-button col-sm-12">Play again</label>
+                        </div>
+
                     </div>
 
                 </div>

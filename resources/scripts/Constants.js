@@ -55,9 +55,15 @@ HTML_BORDER = '<td> ' +
     '<img src='+PIC_ADRESS_USER_ANSWER +' class="border tech user_answer" id="{{user_ans_id}}"> ' +
     '</td>';
 
+HTML_CORRECT_ANS_LOG = "Correct";
+HTML_WRONG_ANS_LOG = "Wrong";
+BR = "<br>";
+
+
 CLASS_CURRENT_LEVEL_WALL = "current-level-wall";
 CLASS_CURRENT_LEVEL_BALL = "current-level-ball";
 CLASS_CURRENT_LEVEL_CORRECT_ANSWER = "current-level-correct-answer";
+CLASS_CURRENT_LEVEL_USER_ANSWER = "current-level-user-answer";
 
 
 

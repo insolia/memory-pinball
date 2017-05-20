@@ -8,25 +8,30 @@ $(document).ready(function () {
     // hide everything before start
     $(".page").hide();
 
-    intro();
+    controls();
 });
 
 var buildIntro = function () {
+    $(".page").hide();
     $(".intro-container").show();
 };
 var hideIntro = function () {
     $(".intro-container").hide();
 };
 var buildGame = function () {
+    $(".page").hide();
+
     $(".game-container").show()//.animate({height: "75%"}, "slow");
     var gameBox = $(".game-box");
     gameBox.hide();
-    console.log("Start building empty field");
-    buildGameField(emptyFieldInfo(Settings.field_height, Settings.field_width));
+    if (!gameFieldIsPresent()) {
+        console.log("Start building empty field");
+        buildGameField(emptyFieldInfo(Settings.field_height, Settings.field_width));
+        fieldIsBuilt = 1;
+    }
     gameBox.fadeIn("slow");
 
 };
-
 var hideGame = function () {
     $(".game-container").hide();
 };
@@ -42,17 +47,16 @@ var buildGameField = function (fieldInfo) {
             if (!!(BORDER_CODES.indexOf(code) + 1)) {
                 var td = HTML_BORDER;
                 td = td.replace("{{border_id}}", 'border_' + h + '_' + w);
-                td = td.replace("{{ball_id}}", getElementId(CODE_BALL,h,w));
-                td = td.replace("{{corr_ans_id}}", getElementId(CODE_CORRECT_ANSWER,h,w));
-                td = td.replace("{{user_ans_id}}", getElementId(CODE_USER_ANSWER,h,w));
-
+                td = td.replace("{{ball_id}}", getElementId(CODE_BALL, h, w));
+                td = td.replace("{{corr_ans_id}}", getElementId(CODE_CORRECT_ANSWER, h, w));
+                td = td.replace("{{user_ans_id}}", getElementId(CODE_USER_ANSWER, h, w));
 
 
             } else {
                 var td = HTML_CELL;
-                td = td.replace("{{cell_id}}", getElementId(CODE_EMPTY_CELL,h,w));
-                td = td.replace("{{right_wall_id}}", getElementId(CODE_RIGHT_WALL,h,w));
-                td = td.replace("{{left_wall_id}}", getElementId(CODE_LEFT_WALL,h,w));
+                td = td.replace("{{cell_id}}", getElementId(CODE_EMPTY_CELL, h, w));
+                td = td.replace("{{right_wall_id}}", getElementId(CODE_RIGHT_WALL, h, w));
+                td = td.replace("{{left_wall_id}}", getElementId(CODE_LEFT_WALL, h, w));
 
             }
             td = td.replace("{{pic_address}}", CODE_PIC_MAP[code]);

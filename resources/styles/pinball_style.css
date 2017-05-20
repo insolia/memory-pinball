@@ -34,8 +34,19 @@ body{
     max-height: 100%;
 }
 
-.btn{
+.my-button{
     background-color: #302E2B;
+}
+
+.my-button:hover{
+    color: greenyellow;
+}
+.my-button:focus{
+    color: #FFF8EE;
+    outline: none;
+}
+.my-button::selection{
+    color: #FFF8EE;
 }
 
 .game-element{
@@ -43,7 +54,7 @@ body{
 }
 
 .side-box{
-    background-color: #A1988B;
+    text-align: center;
     width: 100%;
     height: 100%;
 }
@@ -60,7 +71,7 @@ body{
 
 .game-board {
     width: 100%;
-    max-height: 100%;
+    max-height: 90%;
 }
 
 

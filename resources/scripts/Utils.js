@@ -185,6 +185,14 @@ var calculateAnswer = function (ball_list, fieldInfo) {
     return calculateAnswerByStep(ball, to);
 };
 
+var fieldIsBuilt = 0;
+
+var userProgress = [];
+
+var gameFieldIsPresent = function(){
+    return fieldIsBuilt;
+}
+
 
 
 
