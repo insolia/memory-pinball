@@ -37,8 +37,8 @@ PIC_ADRESS_TOP_BORDER = 'resources/files/border_BT.png';
 PIC_ADRESS_BOTTOM_BORDER = 'resources/files/border_BB.png';
 PIC_ADRESS_CORNER_BORDER = 'resources/files/border_BC.png';
 PIC_ADRESS_BALL = 'resources/files/ball.png';
-PIC_ADRESS_CORECT_ANSWER = 'resources/files/cell_E.png';
-PIC_ADRESS_USER_ANSWER = 'resources/files/cell_R.png';
+PIC_ADRESS_CORECT_ANSWER = 'resources/files/correct.png';
+PIC_ADRESS_USER_ANSWER = 'resources/files/wrong.png';
 
 
 
