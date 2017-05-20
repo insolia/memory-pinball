@@ -82,6 +82,13 @@ body{
     max-height: 90%;
 }
 
+a{
+    color: greenyellow;
+}
+a:hover{
+    color: greenyellow;
+}
+
 
 td {
     width: 5%;
