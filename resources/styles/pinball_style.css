@@ -34,6 +34,7 @@ body{
 
 .my-button{
     background-color: #302E2B;
+    margin-top: 20px;
 }
 
 .my-button:hover{
@@ -74,7 +75,7 @@ body{
 
 #intro-heading{
     margin-top: 30px;
-    font-size: 80px;
+    font-size: 3em;
 }
 
 .game-board {
@@ -83,7 +84,7 @@ body{
 }
 
 a{
-    color: greenyellow;
+    color: #FFF8EE;
 }
 a:hover{
     color: greenyellow;

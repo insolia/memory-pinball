@@ -59,17 +59,6 @@ HTML_CORRECT_ANS_LOG = "Correct";
 HTML_WRONG_ANS_LOG = "Wrong";
 BR = "<br>";
 
-HTML_ABOUT = "This is a pure jQuery game <br>" +
-    "You can check out source <a href='https://github.com/insolia/memory-pinball'>here</a> if you interested.<br>" +
-    "Idea was stolen from <a href='https://www.lumosity.com/'>Lumosity</a> Brain Games<br>";
-
-HTML_RULES = "You will see a maze of walls <br> " +
-    "Try to memorize it as good as you can, You will only have a few seconds to look at walls. <br>" +
-    "Afrer walls disappear, You'll see a ball on the edge of the field.<br>" +
-    "Imagine that ball is pushed on the field and try to predict where it would leave the field <br>" +
-    "But keep walls in mind. Ball would bounce of the walls and change direction.<br><br>" +
-    "Click on wall you think ball will hit to see the correct answer<br>";
-
 
 CLASS_CURRENT_LEVEL_WALL = "current-level-wall";
 CLASS_CURRENT_LEVEL_BALL = "current-level-ball";

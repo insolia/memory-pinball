@@ -72,22 +72,6 @@ var buildGameField = function (fieldInfo) {
     $(".tech").hide();
 };
 
-var showAbout = function(){
-    $(".info-heading").append("About");
-    $(".info-container").show();
-    var info = $(".info-box");
-    info.append(HTML_ABOUT)
-
-
-
-};
-var showRules = function(){
-    $(".info-heading").append("Rules");
-    $(".info-container").show();
-    var info = $(".info-box");
-    info.append(HTML_RULES)
-};
-
 var cleanUpInfo = function(){
     $(".info-box").empty();
     $(".info-heading").empty();

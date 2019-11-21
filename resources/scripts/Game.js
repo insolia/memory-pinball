@@ -28,11 +28,6 @@ var game = function () {
 
     return [beforePlayTimer, memorizingTimer];
 
-    /*
-     make_walls_clicable();
-     process_answer(border_id);
-     move_ball(level);
-     */
 };
 
 var setUpLevel = function (level) {
@@ -67,6 +62,8 @@ var cleanUpLevel = function (timers) {
     $("." + CLASS_CURRENT_LEVEL_CORRECT_ANSWER).removeClass(CLASS_CURRENT_LEVEL_CORRECT_ANSWER);
     $("." + CLASS_CURRENT_LEVEL_USER_ANSWER).removeClass(CLASS_CURRENT_LEVEL_USER_ANSWER);
 
+    $(".border").off();
+
     timers.forEach(function (timer) {
         clearTimeout(timer);
     });
@@ -78,7 +75,6 @@ var processAnswer = function (answer_boarder_id, level) {
     $("." + CLASS_CURRENT_LEVEL_CORRECT_ANSWER).fadeIn();
     var user_ans_coord = getCoordinatesById(answer_boarder_id);
     $("#" + getElementId(CODE_USER_ANSWER, user_ans_coord[0], user_ans_coord[1])).addClass(CLASS_CURRENT_LEVEL_USER_ANSWER);
-
 
     if (getElementId(CODE_BOTTOM_BORDER, level.answer[0], level.answer[1]) == answer_boarder_id) {
         userProgress.push(true);

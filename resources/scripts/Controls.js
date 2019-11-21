@@ -12,16 +12,6 @@ var controls = function(){
         timers = game();
     });
 
-    $("#button-rules").click(function(){
-        hideIntro();
-        showRules();
-    });
-
-    $("#button-about").click(function(){
-        hideIntro();
-        showAbout();
-    });
-
     $("#play-again-button").click(function(){
         cleanUpLevel(timers);
         timers = game();
